@@ -36,7 +36,7 @@ async function testPassword()
 {   
    var settings = {
       'mode': {
-         'hibp': false,
+         'hibp': true,
          'mostcommon': true,
          'lastchaos': true
       },
