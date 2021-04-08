@@ -35,22 +35,26 @@ async function chaosleak(settings, password)
 
 async function server(dir, mode, password)
 {
+    var letter = password[0];
+    
     if(mode == 'mostcommon')
     {
         var specialcharacters = ['*', '?', '$', '\\', '/', '<', '>', '"', ':', '|', '!', '.', '#', '%', '[', ']', '(', ')', '{', '}'];
+        
+        specialcharacters.forEach(e => {
+          if (password.indexOf(e) >= 0)
+              letter = "special";
 
-        if (password.indexOf(specialcharacters) >= 0)
-            letter = "special";
+        });
     }
     
-    var letter = password[0];
     var exists = false;
 
     return await fetch(dir + (mode == 'mostcommon' ? 'most-common' : 'lastchaos') + '/' + letter + ".txt", {mode: 'no-cors'})
         .then(response => response.text())
         .then(text => text.split('\n'))
         .then(result => {
-            if(result.find(r => r.match(password)))
+            if(result.find(r => r.match(letter == "special" ? password.replace(/([()[{*+.$^\\|?])/g, '\\$1') : password)))
                 exists = true;
         })
         .then(result => exists)
