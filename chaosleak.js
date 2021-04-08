@@ -1,4 +1,3 @@
-
 /**
  * chaosleak.js
  * @author agsvn
@@ -42,9 +41,8 @@ async function server(dir, mode, password)
         var specialcharacters = ['*', '?', '$', '\\', '/', '<', '>', '"', ':', '|', '!', '.', '#', '%', '[', ']', '(', ')', '{', '}'];
         
         specialcharacters.forEach(e => {
-          if (password.indexOf(e) >= 0)
+          if (e === letter)
               letter = "special";
-
         });
     }
     
