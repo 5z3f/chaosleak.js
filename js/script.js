@@ -1,7 +1,7 @@
 
 // -------------------------------------
 // This is just an example how library should be used.
-// Please do not use it in your server as it's not production ready and may contain bugs.
+// Please do not use this file in your server as it's not production ready and may contain bugs.
 // -------------------------------------
 
 let submitBtn = document.getElementById("check-password-btn");
