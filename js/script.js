@@ -14,6 +14,16 @@ const translate = {
    'v3': "<br/><span class=\"badge bg-success text-dark my-1\"><i class=\"fas fa-check-square\"></i> Not Found</span><br/>I think you're safe! (for now)"
 }
 
+const settings = {
+   'mode': {
+      'hibp': true,
+      'mostcommon': true,
+      'lastchaos': true
+   },
+   'hibp-api': 'https://api.pwnedpasswords.com/range/',
+   'data-dir': './asset/data/'
+};
+
 submitBtn.onclick = function() {
    if(passwordInput.value.length > 0)
       testPassword();
@@ -33,18 +43,7 @@ function toElement(html)
 }
 
 async function testPassword()
-{   
-   var settings = {
-      'mode': {
-         'hibp': true,
-         'mostcommon': true,
-         'lastchaos': true
-      },
-      'hibp-api': 'https://api.pwnedpasswords.com/range/',
-      'data-dir': './asset/data/'
-   };
-
-
+{
    let result = document.getElementById("result");
 
    while (result.lastElementChild)
