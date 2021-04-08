@@ -9,7 +9,7 @@ let passwordInput = document.getElementById("password-input");
 
 const translate = {
    'v0': "<br/><span class=\"badge bg-warning text-dark my-1\"><i class=\"fas fa-exclamation-triangle\"></i> Vulnerable</span><br/>This password have been seen over {0} times in various breaches.",
-   'v1': "<br/><span class=\"badge bg-danger text-dark my-1\"><i class=\"fas fa-user-secret\"></i> Compromised</span><br/>Your password have been leaked from Last Chaos in the past, change your password immediately.",
+   'v1': "<br/><span class=\"badge bg-danger text-dark my-1\"><i class=\"fas fa-user-secret\"></i> Compromised</span><br/>This password have been leaked from Last Chaos in the past, change your password immediately.",
    'v2': "<br/><span class=\"badge bg-warning text-dark my-1\"><i class=\"fas fa-exclamation-triangle\"></i> Weak</span><br/>This password was found in our most common list.",
    'v3': "<br/><span class=\"badge bg-success text-dark my-1\"><i class=\"fas fa-check-square\"></i> Not Found</span><br/>I think you're safe! (for now)"
 }
